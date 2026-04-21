@@ -9,6 +9,7 @@ import { createClient } from '@/lib/supabase/server'
 import { stripe, STRIPE_PRICES } from '@/lib/stripe'
 
 export const dynamic = 'force-dynamic'
+export const runtime = 'nodejs'
 
 export async function POST(request: NextRequest) {
   try {

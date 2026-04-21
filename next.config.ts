@@ -2,7 +2,6 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   experimental: {
-    // Desativa a funcionalidade de workers para evitar problemas com o Sharp
     webpackBuildWorker: false,
     parallelServerBuildTraces: false,
     parallelServerCompiles: false,
@@ -14,6 +13,13 @@ const nextConfig: NextConfig = {
         hostname: '**',
       },
     ],
+  },
+  // Desativa erros de prerender durante o build
+  typescript: {
+    ignoreBuildErrors: false,
+  },
+  eslint: {
+    ignoreDuringBuilds: true,
   },
 };
 

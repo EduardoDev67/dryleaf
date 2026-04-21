@@ -6,11 +6,14 @@
 
 import OpenAI from 'openai'
 
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
-})
-
 const MODEL = process.env.OPENAI_MODEL || 'gpt-4o-mini'
+
+// Cria cliente OpenAI apenas se a chave existir (evita erro no build)
+const openai = process.env.OPENAI_API_KEY
+  ? new OpenAI({
+      apiKey: process.env.OPENAI_API_KEY,
+    })
+  : null
 
 /**
  * Gera uma dieta personalizada baseada nos dados do usuario
@@ -68,6 +71,10 @@ Responda APENAS em formato JSON valido:
 }
 `
 
+  if (!openai) {
+    throw new Error('OpenAI API key nao configurada')
+  }
+
   try {
     const response = await openai.chat.completions.create({
       model: MODEL,
@@ -121,6 +128,10 @@ DIRETRIZES:
 AVISO MEDICO: "Esta informacao e apenas educacional.
 Consulte um profissional de saude para orientacao personalizada."
 `
+
+  if (!openai) {
+    throw new Error('OpenAI API key nao configurada')
+  }
 
   try {
     const response = await openai.chat.completions.create({

@@ -10,6 +10,7 @@ import { chatWithAI } from '@/lib/openai'
 
 // Forca execucao dinamica - nao tenta pre-renderizar durante o build
 export const dynamic = 'force-dynamic'
+export const runtime = 'nodejs'
 
 export async function POST(request: NextRequest) {
   try {

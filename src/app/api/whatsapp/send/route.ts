@@ -9,6 +9,7 @@ import { createClient } from '@/lib/supabase/server'
 import { sendWhatsAppMessage, formatDietForWhatsApp } from '@/lib/twilio'
 
 export const dynamic = 'force-dynamic'
+export const runtime = 'nodejs'
 
 export async function POST(request: NextRequest) {
   try {
