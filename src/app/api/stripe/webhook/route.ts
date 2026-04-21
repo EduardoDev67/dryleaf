@@ -59,12 +59,12 @@ export async function POST(request: NextRequest) {
     case 'customer.subscription.deleted':
     case 'customer.subscription.updated': {
       const subscription = event.data.object
-      // @ts-ignore
+      // @ts-expect-error - metadata pode não existir no tipo
       const userId = subscription.metadata?.user_id
 
       if (userId) {
         // Verifica se a assinatura foi cancelada
-        // @ts-ignore
+        // @ts-expect-error - propriedades opcionais do Stripe
         if (subscription.status === 'canceled' || subscription.cancel_at_period_end) {
           await supabase
             .from('profiles')
