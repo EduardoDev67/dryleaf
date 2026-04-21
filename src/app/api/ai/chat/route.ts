@@ -8,6 +8,9 @@ import { NextRequest, NextResponse } from 'next/server'
 import { createClient } from '@/lib/supabase/server'
 import { chatWithAI } from '@/lib/openai'
 
+// Forca execucao dinamica - nao tenta pre-renderizar durante o build
+export const dynamic = 'force-dynamic'
+
 export async function POST(request: NextRequest) {
   try {
     const supabase = await createClient()
