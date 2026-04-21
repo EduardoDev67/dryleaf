@@ -1,36 +1,75 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🍃 DryLeaf - Assistente de Nutrição com IA
 
-## Getting Started
+Plataforma SaaS completa para geração de dietas personalizadas com inteligência artificial, chatbot de nutrição e integração com WhatsApp.
 
-First, run the development server:
+## ✨ Funcionalidades
+
+- 🤖 **Chat com IA 24/7** - Tire dúvidas sobre nutrição a qualquer hora
+- 🍽️ **Dietas Personalizadas** - Planos alimentares únicos gerados por IA
+- 📱 **Integração WhatsApp** - Receba dietas e lembretes no celular
+- 🎯 **Acompanhamento de Progresso** - Monitore sua evolução semanal
+- 🔐 **Autenticação Segura** - Login com email/senha via Supabase
+- 💳 **Pagamentos** - Assinaturas via Stripe (Premium e Pro)
+
+## 🛠️ Stack Tecnológico
+
+| Componente | Tecnologia |
+|------------|------------|
+| Framework | Next.js 14 (App Router) |
+| Linguagem | TypeScript |
+| Estilização | Tailwind CSS |
+| UI Components | shadcn/ui |
+| Banco de Dados | Supabase (PostgreSQL) |
+| IA | OpenAI GPT-4o |
+| Pagamentos | Stripe |
+| WhatsApp | Twilio |
+
+## 🚀 Como Executar
+
+### 1. Instale as dependências
+
+```bash
+npm install
+```
+
+### 2. Configure as variáveis de ambiente
+
+Crie um arquivo `.env.local` na raiz do projeto com as variáveis necessárias.
+
+### 3. Execute o servidor de desenvolvimento
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Acesse [http://localhost:3000](http://localhost:3000)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📦 Build para Produção
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm start
+```
 
-## Learn More
+## 🎨 Cores do Brand
 
-To learn more about Next.js, take a look at the following resources:
+- **Verde Principal:** #2D5016
+- **Verde Claro:** #4a7c2a
+- **Amarelo Destaque:** #F4C430
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📱 Páginas Principais
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+| Página | Descrição |
+|--------|-----------|
+| `/` | Landing Page |
+| `/login` | Login |
+| `/signup` | Cadastro |
+| `/dashboard` | Painel principal |
+| `/dieta` | Gerador de dietas |
+| `/chat` | Chat com IA |
+| `/perfil` | Configurações |
+| `/pricing` | Planos |
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+**Nota:** Esta aplicação não substitui orientação médica ou nutricional profissional.
